@@ -1,0 +1,192 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "da349143-c1aa-44ef-ad09-4df34b757976",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "344f8556-a03c-8030-b9a1-e4fffe3fe3de",
+          "mode": "list",
+          "cachedResultName": "Gastos",
+          "cachedResultUrl": "https://www.notion.so/344f8556a03c8030b9a1e4fffe3fe3de"
+        },
+        "title": "={{$json.output.Nome}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Forma de pagamento|select",
+              "selectValue": "={{$json.output[\"Forma de pagamento\"]}}"
+            },
+            {
+              "key": "Valor|number",
+              "numberValue": "={{$json.output.Valor}}"
+            },
+            {
+              "key": "Vencimento|date",
+              "date": "={{$now}}",
+              "timezone": "=America/Sao_Paulo"
+            },
+            {
+              "key": "Status|status",
+              "statusValue": "={{$json.output.Status}}"
+            },
+            {
+              "key": "Parcela atual|number",
+              "numberValue": "={{$json.output['Parcela atual']}}"
+            },
+            {
+              "key": "Parcelas|number",
+              "numberValue": "={{$json.output.Parcelas}}"
+            },
+            {
+              "key": "Categoria|select",
+              "selectValue": "={{$json.output.Categoria}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        0
+      ],
+      "id": "4361522d-cd90-4283-a13f-18d5402ddb81",
+      "name": "Create a database page",
+      "credentials": {
+        "notionApi": {
+          "id": "Bd1BC05CqPTjb94l",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "curso 300 crédito 6x\n",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Você é um organizador financeiro.\n\nReceba uma mensagem do usuário e extraia os dados financeiros.\n\nCategorias:\n- Mercado, almoço, jantar, lanche → Comida\n- Uber, gasolina, ônibus → Transporte\n- Luz, água, internet, aluguel → Contas fixas\n- Netflix, Spotify → Assinatura\n- Cinema, shopping, jogos → Lazer\n- Ração, areia, brinquedo, veterinário, pet shop, petisco → Gato\n- Curso, faculdade, livro, Udemy, Alura, material escolar → Estudos\n- Roupa, camiseta, tênis, calça → Roupas\n- Hotel, viagem, passagem, Airbnb → Viagem\n- Qualquer outro → Outros\n\nRegras de status:\n\n- Se a conta ainda não foi paga → Pendente\n- Se a conta foi paga → Pago\n- Se a data de vencimento passou e não foi paga → Vencida\n\nForma de pagamento:\n- pix → Pix\n- crédito → Crédito\n- débito → Débito\n\nRegras de parcelas:\n- Se aparecer \"3x\", \"6x\", \"12x\", extraia o número para Parcelas\n- Parcela atual começa em 1\n\n- Se for Pix ou Débito:\n  Parcelas = 1\n  Parcela atual = 1\n\n- Se não informar parcelas no Crédito:\n  Parcelas = 1\n  Parcela atual = 1\n\n- Valor deve ser número puro (sem R$)\n- Não escreva explicações\n- Não escreva texto fora do JSON\n\nRetorne APENAS:\n\n{\n\"Nome\":\"\",\n\"Valor\":0,\n\"Categoria\":\"\",\n\"Forma de pagamento\":\"\",\n\"Parcelas\":1,\n\"Parcela atual\":1,\n\"Status\":\"\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        176,
+        0
+      ],
+      "id": "80914793-aadd-4b85-8d36-837a79c497d8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        208
+      ],
+      "id": "8856814d-49f3-4087-8a3b-8554feeef30b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\"Nome\":\"string\",\n\"Valor\":0,\n\"Categoria\":\"string\",\n\"Forma de pagamento\":\"string\",\n\"Parcelas\":1,\n\"Parcela atual\":1,\n\"Status\":\"string\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        416,
+        208
+      ],
+      "id": "a6e836b4-ed3f-40da-a77d-3789e9204570",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "Create a database page": {
+      "main": [
+        []
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create a database page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "d7f15282-3957-4745-8163-c375c202d87a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1a88619eb66505e41477f51ae5ca1525796c9b9efd5d2e1998a22e76fd241e08"
+  },
+  "id": "1S6Kgg6nhHDb0LZ2",
+  "tags": []
+}
