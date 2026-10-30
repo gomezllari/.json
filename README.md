@@ -1,32 +1,42 @@
-# Personal Finance Organizer
+# FIAP Postgraduate Studies — Artificial Intelligence for Developers
 
-A personal finance organization project built around **Notion** and **n8n**.
+This repository brings together my practical exercises, notebooks, assignments and study projects from the **Artificial Intelligence for Developers postgraduate program at FIAP**.
 
-The goal is to make it easier to keep track of financial records, due dates and payment status in one place.
+It documents my learning journey through Python, data analysis, Machine Learning and applied AI topics.
 
-## Project Overview
+## Topics & Practical Exercises
 
-The project explores the use of a Notion database together with workflow automation to support day-to-day financial organization.
+The repository includes notebooks and exercises covering:
 
-## Current Scope
+- **Python and data analysis**
+- **Linear regression** and end-to-end regression workflows
+- **Exploratory data analysis (EDA)**
+- **Feature scaling:** normalization and standardization
+- **Principal Component Analysis (PCA)**
+- **Supervised learning:** classification models
+- **Unsupervised learning:** clustering
+- **Image segmentation**, including a breast cancer image exercise
+- **Tree-based models**
+- **Model validation:** cross-validation and confusion matrix
+- **Evaluation metrics:** classification report, ROC curve and ROC AUC
+- **Applied case studies**, including breast cancer classification and credit card fraud analysis
 
-- Organizing personal financial records in Notion
-- Tracking due dates and payment status
-- Workflow ideas for identifying overdue records and updating information
+## Repository Organization
 
-## Planned Improvements
+- `Aula 2/`, `Aula 3/` and `Aula 4/`: notebooks and practical exercises from earlier modules
+- `Fase 2/`: coursework organized by class for the Advanced Machine Learning module
+- Root-level notebooks: applied cases, assignments and additional practice
 
-- Bank transaction integration
-- Automatic transaction synchronization
-- A more complete financial dashboard
-- Automatic categorization
-- Financial reports and analysis
+## Tools & Technologies
 
-## Tools
+- Python
+- Jupyter Notebook
+- pandas
+- NumPy
+- Matplotlib
+- scikit-learn
+- Machine Learning
 
-- Notion
-- n8n
+## Purpose
 
-## Status
-
-Work in progress. Features and documentation may change as the project evolves.
+This is a learning repository. The notebooks reflect my ongoing postgraduate studies and practical exploration of AI and Machine Learning concepts. Projects and exercises may be updated as I develop my skills.
