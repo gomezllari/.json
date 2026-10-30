@@ -1,42 +1,41 @@
 # FIAP Postgraduate Studies — Artificial Intelligence for Developers
 
-This repository brings together my practical exercises, notebooks, assignments and study projects from the **Artificial Intelligence for Developers postgraduate program at FIAP**.
+This repository contains notebooks, practical exercises and applied projects from my **Artificial Intelligence for Developers postgraduate program at FIAP**.
 
-It documents my learning journey through Python, data analysis, Machine Learning and applied AI topics.
+It documents my learning journey in Python, data analysis, Machine Learning and applied AI.
 
-## Topics & Practical Exercises
+## Repository Structure
 
-The repository includes notebooks and exercises covering:
+| Folder | Contents |
+|---|---|
+| `01-python-data-analysis/` | Python, data analysis, linear regression, feature scaling and PCA exercises |
+| `02-machine-learning/` | Classification, clustering, image segmentation, tree-based models and model evaluation |
+| `03-applied-projects/` | Applied case studies and FIAP assignments, including breast cancer analysis and the Tech Challenge |
+| `archive/n8n-workflows/` | Archived n8n workflow exports from an earlier personal experiment |
 
-- **Python and data analysis**
-- **Linear regression** and end-to-end regression workflows
-- **Exploratory data analysis (EDA)**
-- **Feature scaling:** normalization and standardization
-- **Principal Component Analysis (PCA)**
-- **Supervised learning:** classification models
-- **Unsupervised learning:** clustering
-- **Image segmentation**, including a breast cancer image exercise
-- **Tree-based models**
-- **Model validation:** cross-validation and confusion matrix
-- **Evaluation metrics:** classification report, ROC curve and ROC AUC
-- **Applied case studies**, including breast cancer classification and credit card fraud analysis
+## Topics Covered
 
-## Repository Organization
-
-- `Aula 2/`, `Aula 3/` and `Aula 4/`: notebooks and practical exercises from earlier modules
-- `Fase 2/`: coursework organized by class for the Advanced Machine Learning module
-- Root-level notebooks: applied cases, assignments and additional practice
+- Python and data analysis
+- Exploratory data analysis (EDA)
+- Linear regression and classification
+- Feature scaling: normalization and standardization
+- Principal Component Analysis (PCA)
+- Supervised and unsupervised learning
+- Clustering and image segmentation
+- Tree-based models
+- Cross-validation and model evaluation
+- Confusion matrix, classification report, ROC curve and ROC AUC
+- Applied case studies involving breast cancer classification and credit card fraud analysis
 
 ## Tools & Technologies
 
 - Python
 - Jupyter Notebook
-- pandas
-- NumPy
+- pandas and NumPy
 - Matplotlib
 - scikit-learn
 - Machine Learning
 
-## Purpose
+## About
 
-This is a learning repository. The notebooks reflect my ongoing postgraduate studies and practical exploration of AI and Machine Learning concepts. Projects and exercises may be updated as I develop my skills.
+This is a learning repository. The notebooks reflect coursework, practical exercises and projects developed throughout my FIAP postgraduate studies. The content may evolve as I continue learning and applying AI and Machine Learning concepts.
