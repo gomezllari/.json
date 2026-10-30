@@ -11,7 +11,6 @@ It documents my learning journey in Python, data analysis, Machine Learning and 
 | `01-python-data-analysis/` | Python, data analysis, linear regression, feature scaling and PCA exercises |
 | `02-machine-learning/` | Classification, clustering, image segmentation, tree-based models and model evaluation |
 | `03-applied-projects/` | Applied case studies and FIAP assignments, including breast cancer analysis and the Tech Challenge |
-| `archive/n8n-workflows/` | Archived n8n workflow exports from an earlier personal experiment |
 
 ## Topics Covered
 
