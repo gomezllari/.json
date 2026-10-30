@@ -1,36 +1,32 @@
-# Finance Organizer with Notion
+# Personal Finance Organizer
 
-Sistema de organização financeira integrado ao Notion com automações em desenvolvimento.
+A personal finance organization project built around **Notion** and **n8n**.
 
-## Sobre o projeto
+The goal is to make it easier to keep track of financial records, due dates and payment status in one place.
 
-Este projeto foi criado para facilitar o controle financeiro pessoal através de uma tabela no Notion conectada com automações.
+## Project Overview
 
-Atualmente o sistema já possui automações automáticas para identificar registros vencidos e atualizar informações de forma automática.
+The project explores the use of a Notion database together with workflow automation to support day-to-day financial organization.
 
-O projeto ainda está em desenvolvimento e novas funcionalidades serão adicionadas futuramente.
+## Current Scope
 
-## Funcionalidades atuais
+- Organizing personal financial records in Notion
+- Tracking due dates and payment status
+- Workflow ideas for identifying overdue records and updating information
 
-- Organização financeira no Notion
-- Controle de registros e vencimentos
-- Automação para itens vencidos
-- Atualizações automáticas via automação
+## Planned Improvements
 
-## Planejamento futuro
+- Bank transaction integration
+- Automatic transaction synchronization
+- A more complete financial dashboard
+- Automatic categorization
+- Financial reports and analysis
 
-Pretendo adicionar:
-- integração com banco;
-- sincronização automática de transações;
-- dashboard financeiro mais completo;
-- categorização automática;
-- relatórios e análises financeiras.
-
-## Tecnologias
+## Tools
 
 - Notion
 - n8n
 
 ## Status
 
-🚧 Projeto em desenvolvimento contínuo.
+Work in progress. Features and documentation may change as the project evolves.
